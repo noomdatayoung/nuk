@@ -1,0 +1,165 @@
+<style>
+#temperature-icon,#current-icon,#download-icon{
+width:24px;
+}</style>
+ <body>
+ <span class="current_date"></span>
+
+<br/>
+<span class="current_temp"></span>	 <span  class="temp_icon"></span>
+<span><img id="current-icon"></span>
+    <link rel="stylesheet" href="weather-icons.css">
+	</body>
+<script>
+weatherIcon = document.getElementById("current-icon");
+weatherIcon.innerHTML="Mostly-Sunny.svg";//weatherImages[text];
+
+  var callbackFunction = function(data) {
+    var wind = data.query.results.channel.wind;
+	var temp = data.query.results.channel.item.condition.temp;
+    var code = data.query.results.channel.item.condition.code;
+    var text = data.query.results.channel.item.condition.text;
+	var monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN","JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    var today = new Date();
+    var date = today.getDate();
+    var month =  monthNames[today.getMonth()];
+    var year = today.getFullYear();
+
+    switch(code) {
+        case '0': var icon  = '<i class="wi wi-tornado"></i>';
+        break;
+        case '1': var icon  = '<i class="wi wi-storm-showers"></i>';
+        break;
+        case '2': var icon  = '<i class="wi wi-tornado"></i>';
+        break;
+        case '3': var icon  = '<i class="wi wi-thunderstorm"></i>';
+        break;
+        case '4': var icon  = '<i class="wi wi-thunderstorm"></i>';
+        break;
+        case '5': var icon  = '<i class="wi wi-snow"></i>';
+        break;
+        case '6': var icon  = '<i class="wi wi-rain-mix"></i>';
+        break;
+        case '7': var icon  = '<i class="wi wi-rain-mix"></i>';
+        break;
+        case '8': var icon  = '<i class="wi wi-sprinkle"></i>';
+        break;
+        case '9': var icon  = '<i class="wi wi-sprinkle"></i>';
+        break;
+        case '10': var icon  = '<i class="wi wi-hail"></i>';
+        break;
+        case '11': var icon  = '<i class="wi wi-showers"></i>';
+        break;
+        case '12': var icon  = '<i class="wi wi-showers"></i>';
+        break;
+        case '13': var icon  = '<i class="wi wi-snow"></i>';
+        break;
+        case '14': var icon  = '<i class="wi wi-storm-showers"></i>';
+        break;
+        case '15': var icon  = '<i class="wi wi-snow"></i>';
+        break;
+        case '16': var icon  = '<i class="wi wi-snow"></i>';
+        break;
+        case '17': var icon  = '<i class="wi wi-hail"></i>';
+        break;
+        case '18': var icon  = '<i class="wi wi-hail"></i>';
+        break;
+        case '19': var icon  = '<i class="wi wi-cloudy-gusts"></i>';
+        break;
+        case '20': var icon  = '<i class="wi wi-fog"></i>';
+        break;
+        case '21': var icon  = '<i class="wi wi-fog"></i>';
+        break;
+        case '22': var icon  = '<i class="wi wi-fog"></i>';
+        break;
+        case '23': var icon  = '<i class="wi wi-cloudy-gusts"></i>';
+        break;
+        case '24': var icon  = '<i class="wi wi-cloudy-windy"></i>';
+        break;
+        case '25': var icon  = '<i class="wi wi-thermometer"></i>';
+        break;
+        case '26': var icon  = '<i class="wi wi-cloudy"></i>';
+        break;
+        case '27': var icon  = '<i class="wi wi-night-cloudy"></i>';
+        break;
+        case '28': var icon  = '<i class="wi wi-day-cloudy"></i>';
+        break;
+        case '29': var icon  = '<i class="wi wi-night-cloudy"></i>';
+        break;
+        case '30': var icon  = '<i class="wi wi-day-cloudy"></i>';
+        break;
+        case '31': var icon  = '<i class="wi wi-night-clear"></i>';
+        break;
+        case '32': var icon  = '<i class="wi wi-day-sunny"></i>';
+        break;
+        case '33': var icon  = '<i class="wi wi-night-clear"></i>';
+        break;
+        case '34': var icon  = '<i class="wi wi-day-sunny-overcast"></i>';
+        break;
+        case '35': var icon  = '<i class="wi wi-hail"></i>';
+        break;
+        case '36': var icon  = '<i class="wi wi-day-sunny"></i>';
+        break;
+        case '37': var icon  = '<i class="wi wi-thunderstorm"></i>';
+        break;
+        case '38': var icon  = '<i class="wi wi-thunderstorm"></i>';
+        break;
+        case '39': var icon  = '<i class="wi wi-thunderstorm"></i>';
+        break;
+        case '40': var icon  = '<i class="wi wi-storm-showers"></i>';
+        break;
+        case '41': var icon  = '<i class="wi wi-snow"></i>';
+        break;
+        case '42': var icon  = '<i class="wi wi-snow"></i>';
+        break;
+        case '43': var icon  = '<i class="wi wi-snow"></i>';
+        break;
+        case '44': var icon  = '<i class="wi wi-cloudy"></i>';
+        break;
+        case '45': var icon  = '<i class="wi wi-lightning"></i>';
+        break;
+        case '46': var icon  = '<i class="wi wi-snow"></i>';
+        break;
+        case '47': var icon  = '<i class="wi wi-thunderstorm"></i>';
+        break;
+        case '3200': var icon  =  '<i class="wi wi-cloud"></i>';
+        break;
+        default: var icon  =  '<i class="wi wi-cloud"></i>';
+        break;
+    }
+    if (temp != null){
+	var weatherImages = {
+  "clear-day": "clear-day.svg",
+  "clear-night": "clear-night.svg",
+  "rain": "rain.svg",
+  "snow": "snow.svg",
+  "sleet": "sleet.svg",
+  "wind": "wind.svg",
+  "fog": "fog.svg",
+  "cloudy": "cloudy.svg",
+  "partly-cloudy-day": "partly-cloudy-day.svg",
+  "partly-cloudy-night": "partly-cloudy-night.svg",  
+  "hail": "hail.svg",
+  "thunderstorm": "thunderstorm.svg",
+  "tornado": "tornado.svg",
+  "Mostly Sunny":"Mostly-Sunny.svg"
+  
+}
+var code2w={
+"Mostly Sunny":"Mostly-Sunny.svg"
+}
+	
+        //alert(month + ' ' + date + ', ' + year+'.current_temp'+temp+'.temp_icon'+icon);
+		//ico=document.getElementsByClassName('temp_icon');
+		//ico.innerHTML =icon;
+		//document.getElementsByClassName('current_date').innerHTML=month + ' ' + date + ', ' + year;
+        document.querySelector('.current_temp').innerHTML =temp+"&#8451; "+text;
+        //document.querySelector('.temp_icon').innerHTML=code;//icon;
+	//	weatherIcon.src = weatherImages(icon);
+        weatherIcon.src=weatherImages[text];//"Mostly-Sunny.svg";//
+    }
+  };
+</script>
+
+                                            </div>
+<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where u='c' and woeid in (select woeid from geo.places(1) where text='chiangrai, th' )&format=json&format=json&callback=callbackFunction"></script>

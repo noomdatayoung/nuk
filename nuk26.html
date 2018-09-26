@@ -3,7 +3,14 @@
 <head>
 
 <title>HTML Template</title>
-
+<style>
+#current_temp ,#temperature-icon,#current-icon,#download-icon{
+width:24px;
+color:white;
+z-index:-99;
+//background: rgba(0, 0, 0, 1);
+border:1px;
+}</style>
 <!--
 
 Template 2099 Scenic
@@ -61,18 +68,20 @@ http://www.tooplate.com/view/2099-scenic
                     <li><a href="#home" class="smoothScroll">Home</a></li>
                     <li><a href="#about" class="smoothScroll">About Us</a></li>
                     <li><a href="#team" class="smoothScroll">Our People</a></li>  
-                    <li><a href="#contact" class="smoothScroll">30 &#8451; </a></li>
+                    <li><a href="#contact" class="smoothScroll">LET'sTalk</a></li>
                </ul>
           </div>
 
      </div>
 </div>
 <style>
-h11 {
-mix-blend-mode: difference;
-	zcolor: white;
-	font:100 12vmin/12vh cookie;
-   ttext-shadow: 2px 1px black;
+#home>h1 {
+mmix-blend-mode: difference;
+	color:#ffffff;
+	//font:900 12vmin/12vh cookie;
+   text-shadow: 2px 1px black;
+     font-weight: bold;
+	 
 }
 @font-face {
     font-family: 'ts';
@@ -93,15 +102,15 @@ font-size:24px;
      <div class="overlay"></div>
      <div class="container">
           <div class="row">
-<div style="possition:fixed;float: right; width: 20%;color:white;opacity: 1;z-index:99;" > WEATHER</a></div>
+<span class="weather" style="possition:fixed;float: right; width: 20%;color:#ffffff;font-size:20px;" > <span class="current_temp"></span><span><img id="current-icon"></span></span>
                <div class="col-md-8 col-sm-12">
                     <div class="home-text">
-                         <h1>DoiBo Research Station</h1>
+                         <h1 style="color:#ffffff;">DoiBo Research Station</h1>
 						 <div style="width: 100%;">
 <div style="clear: both;"></div
   
 </div>
-                         <p><b>About DoiBo Recearch Station</b><br><h8>เมื่อวันที่ 31 มกราคม พ.ศ. 2547 สมเด็จพระนางเจ้าฯ พระบรมราชินีนาถ เสด็จทอดพระเนตร พื้นที่ดอยบ่อ พลเอก ณพล บุญทับ รองสมุหราชองครักษ์ กล่าวถวายรายงานจัดตั้งสถานีพัฒนาการเกษตรที่สูงดอยบ่ออันเนืองมาจาก พระราชดำริโดยมีแม่ทัพกองทัพภาคที่ 3 เป็นประธานคณะทำงานผู้อำนวยการสำนักบริหารจัดการในพื้นที่ป่าอนุรักษ์ 15 เป็นผู้อำนวยการโครงการ โครงการมีพื้นที่ 15,000 ไร่ พื้นที่ทำการเกษตรบริเวณป่าเสื่อมโทรม 543.73 ไร่ หมู่บ้านที่อยู่ ในโครงการ 3 หมู่บ้านได้แก่ บ้านจะต๋อ บ้านจะฟู หมู่ที่ 2 และบ้านลอบือ หมู่ที่ 13 ตำบลแม่ยาว อำเภอเมือง จังหวัดเชียงราย ในพื้นที่ 543.73 ไร่นี้ ได้ทำแปลงสาธิตการทำการเกษตร แผนใหม่ เพื่อให้ราษฎรในโครงการสถานีพัฒนาการเกษตรที่สูง ตามพระราชดำริดอยบ่อ ได้ศึกษาเรียนรู้และนำกลับไปทำในที่ดินของตนเอง และบริเวณนี้ยังเป็นที่ตั้งของพลับพลาทรงงาน ของสมเด็จพระนางเจ้าฯ พระบรมราชินีนาถ ในยามเสด็จเยี่ยมชมอีกด้วย</h8></p>
+                         <p style="color:#ffffff;"><b>About DoiBo Recearch Station</b><br><h8>เมื่อวันที่ 31 มกราคม พ.ศ. 2547 สมเด็จพระนางเจ้าฯ พระบรมราชินีนาถ เสด็จทอดพระเนตร พื้นที่ดอยบ่อ พลเอก ณพล บุญทับ รองสมุหราชองครักษ์ กล่าวถวายรายงานจัดตั้งสถานีพัฒนาการเกษตรที่สูงดอยบ่ออันเนืองมาจาก พระราชดำริโดยมีแม่ทัพกองทัพภาคที่ 3 เป็นประธานคณะทำงานผู้อำนวยการสำนักบริหารจัดการในพื้นที่ป่าอนุรักษ์ 15 เป็นผู้อำนวยการโครงการ โครงการมีพื้นที่ 15,000 ไร่ พื้นที่ทำการเกษตรบริเวณป่าเสื่อมโทรม 543.73 ไร่ หมู่บ้านที่อยู่ ในโครงการ 3 หมู่บ้านได้แก่ บ้านจะต๋อ บ้านจะฟู หมู่ที่ 2 และบ้านลอบือ หมู่ที่ 13 ตำบลแม่ยาว อำเภอเมือง จังหวัดเชียงราย ในพื้นที่ 543.73 ไร่นี้ ได้ทำแปลงสาธิตการทำการเกษตร แผนใหม่ เพื่อให้ราษฎรในโครงการสถานีพัฒนาการเกษตรที่สูง ตามพระราชดำริดอยบ่อ ได้ศึกษาเรียนรู้และนำกลับไปทำในที่ดินของตนเอง และบริเวณนี้ยังเป็นที่ตั้งของพลับพลาทรงงาน ของสมเด็จพระนางเจ้าฯ พระบรมราชินีนาถ ในยามเสด็จเยี่ยมชมอีกด้วย</h8></p>
                          <ul class="section-btn">
                               <a href="#about" class="smoothScroll"><span data-hover="Discover More"> More</span></a>
                          </ul>
@@ -399,6 +408,7 @@ font-size:24px;
 </footer>
 
 <!-- SCRIPTS -->
+
 <script src="jquery.js"></script>
 <script src="bootstrap.min.js"></script>
 <script src="jquery.parallax.js"></script>
@@ -409,5 +419,60 @@ font-size:24px;
 <script src="smoothscroll.js"></script>
 <script src="custom.js"></script>
 
+<script>
+weatherIcon = document.getElementById("current-icon");
+weatherIcon.innerHTML="Mostly-.svg";//weatherImages[text];
+
+  var callbackFunction = function(data) {
+    var wind = data.query.results.channel.wind;
+	var temp = data.query.results.channel.item.condition.temp;
+    var code = data.query.results.channel.item.condition.code;
+    var text = data.query.results.channel.item.condition.text;
+	var monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN","JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    var today = new Date();
+    var date = today.getDate();
+    var month =  monthNames[today.getMonth()];
+    var year = today.getFullYear();
+
+    alert(text);
+    if (temp != null){
+	var weatherImages = {
+  "clear-day": "clear-day.svg",
+  "clear-night": "clear-night.svg",
+  "rain": "rain.svg",
+  "snow": "snow.svg",
+  "sleet": "sleet.svg",
+  "wind": "wind.svg",
+  "fog": "fog.svg",
+  "cloudy": "cloudy.svg",
+  "partly-cloudy-day": "partly-cloudy-day.svg",
+  "partly-cloudy-night": "partly-cloudy-night.svg",  
+  "hail": "hail.svg",
+  "thunderstorm": "thunderstorm.svg",
+  "Thunderstorms": "Thunderstorms.svg",
+  "tornado": "tornado.svg",
+  "Mostly Sunny":"Mostly-Sunny.svg",
+  "Mostly Cloudy":"Mostly-cloudy.svg"
+  
+}
+var code2w={
+"Mostly Sunny":"Mostly-Sunny.svg"
+}
+	
+        //alert(month + ' ' + date + ', ' + year+'.current_temp'+temp+'.temp_icon'+icon);
+		//ico=document.getElementsByClassName('temp_icon');
+		//ico.innerHTML =icon;
+		//document.getElementsByClassName('current_date').innerHTML=month + ' ' + date + ', ' + year;
+        document.querySelector('.current_temp').innerHTML =temp+"&#8451; ";//+text;
+        //document.querySelector('.temp_icon').innerHTML=code;//icon;
+	//	weatherIcon.src = weatherImages(icon);
+        weatherIcon.src=weatherImages[text];//"Mostly-Sunny.svg";//
+	   //weatherIcon.innerHTML=text;
+    }
+  };
+</script>
+
+                                            </div>
+<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where u='c' and woeid in (select woeid from geo.places(1) where text='chiangrai, th' )&format=json&format=json&callback=callbackFunction"></script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+<div class="video-responsive">
+                                            <video class="video" muted="muted" loop="loop" autoplay="autoplay">
+                                                <source src="http://www.maeyao.go.th/banyafu/assets/img/video_home.mp4" type="video/mp4"> Your browser does not support HTML5 video.
+                                            </video>
+                                            <canvas class="canvas"></canvas>
+                                            <div id="over_video">
+                                                <div class="video_header_content">
+                                                    <img id="over_video_1" class="" src="http://www.maeyao.go.th/banyafu/assets/img/home_icon.png" style="width: 120px;margin-top: -10%;">
+                                                    <img id="over_video_2" class="home_text" src="http://www.maeyao.go.th/banyafu/assets/img/Home_font_1.png" style="max-width: 600px;width: 80%;">
+                                                    <img id="over_video_2" class="home_text" src="http://www.maeyao.go.th/banyafu/assets/img/Home_font_2_2.png" style="max-width: 350px;width: 50%;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <script src="canvas-video-player.js"></script>
+                                        <script>
+                                        var isIOS = /iPad|iPhone|iPod/.test(navigator.platform);
+
+                                        if (isIOS) {
+
+                                            var canvasVideo = new CanvasVideoPlayer({
+                                                videoSelector: '.video',
+                                                canvasSelector: '.canvas',
+                                                timelineSelector: false,
+                                                autoplay: true,
+                                                makeLoop: true,
+                                                pauseOnClick: false,
+                                                audio: false
+                                            });
+
+                                        } else {
+
+                                            // Use HTML5 video
+                                            document.querySelectorAll('.canvas')[0].style.display = 'none';
+
+                                        }
+                                        </script>
+                                        <style type="text/css">
+                                        .video-responsive {
+                                            position: relative;
+                                            width: 100%;
+                                        }
